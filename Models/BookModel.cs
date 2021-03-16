@@ -1,0 +1,17 @@
+﻿using DevExpress.Mvvm;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace library_accounting_system.Models
+{
+    class BookModel : BindableBase
+    {
+        public String Title { get; set; }
+        public String Autor { get; set; }
+        public String cover { get; set; }
+
+    }
+}
