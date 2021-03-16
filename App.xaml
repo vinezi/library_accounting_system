@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:library_accounting_system"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ThemeDARK.xaml"/>
+                <ResourceDictionary Source="Resources/ControlButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
