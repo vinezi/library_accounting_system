@@ -14,11 +14,11 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border
-                Style="{DynamicResource BorderStyle}"
                 Margin="5"
                 Padding="5"
                 BorderThickness="1"
-                CornerRadius="5">
+                CornerRadius="5"
+                Style="{DynamicResource BorderStyle}">
                 <Grid Margin="0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -31,43 +31,43 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <TextBlock
-                        Style="{DynamicResource TextBlockStyle}"
                         Grid.Row="0"
                         Margin="10"
                         Padding="10"
                         HorizontalAlignment="Center"
                         FontSize="24"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Sign In" />
 
                     <TextBlock
-                        Style="{DynamicResource TextBlockStyle}"
                         Grid.Row="1"
                         Margin="10,0,10,2"
                         FontSize="15"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Username" />
                     <TextBox
-                        Style="{DynamicResource TextBoxStyle}"
                         x:Name="userLoginField"
                         Grid.Row="2"
                         MinWidth="230"
                         Margin="10,0,10,0"
                         FontSize="19"
+                        Style="{DynamicResource TextBoxStyle}"
                         Text="{Binding userLoginField}" />
 
                     <TextBlock
-                        Style="{DynamicResource TextBlockStyle}"
                         Grid.Row="3"
                         Margin="10,5,10,2"
                         FontSize="15"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Password" />
                     <PasswordBox
-                        Style="{DynamicResource PasswordBoxStyle}"
                         x:Name="userPasswordField"
                         Grid.Row="4"
                         Margin="10,0,10,0"
                         FontSize="19"
                         PasswordChanged="PasswordBox_PasswordChanged"
                         PasswordChar="☭"
+                        Style="{DynamicResource PasswordBoxStyle}"
                         ToolTip="Password" />
 
                     <Button
@@ -75,12 +75,14 @@
                         Margin="10,10,10,0"
                         Command="{Binding SignIn}"
                         Content="Sign In"
+                        Style="{DynamicResource ButtonStyle}"
                         Visibility="{Binding Visibility}" />
                     <Button
                         Grid.Row="6"
                         Margin="10,10,10,10"
                         Command="{Binding Registration}"
-                        Content="net akka" />
+                        Content="Registration "
+                        Style="{DynamicResource ButtonActiveTextStyle}" />
                 </Grid>
             </Border>
         </StackPanel>

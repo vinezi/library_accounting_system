@@ -16,9 +16,9 @@
             <Border
                 Margin="5"
                 Padding="5"
-                BorderBrush="Black"
                 BorderThickness="1"
-                CornerRadius="5">
+                CornerRadius="5"
+                Style="{DynamicResource BorderStyle}">
                 <Grid Margin="0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -36,51 +36,58 @@
                         Padding="10"
                         HorizontalAlignment="Center"
                         FontSize="24"
-                        Foreground="Black"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Registration" />
                     <TextBlock
                         Grid.Row="1"
                         Margin="10,0,10,2"
                         FontSize="15"
-                        Foreground="Black"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Username" />
                     <TextBox
                         Grid.Row="2"
                         MinWidth="230"
                         Margin="10,0,10,0"
-                        FontSize="19" />
+                        FontSize="19"
+                        Style="{DynamicResource TextBoxStyle}"
+                        Text="{Binding userLoginField}" />
 
                     <TextBlock
                         Grid.Row="3"
                         Margin="10,5,10,2"
                         FontSize="15"
-                        Foreground="Black"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Password" />
                     <PasswordBox
-                        x:Name="NewUserPasswordField"
+                        x:Name="PasswordField"
                         Grid.Row="4"
                         Margin="10,0,10,0"
                         FontSize="19"
+                        PasswordChanged="PasswordBox_Password"
+                        Style="{DynamicResource PasswordBoxStyle}"
                         ToolTip="Password" />
 
                     <TextBlock
                         Grid.Row="5"
                         Margin="10,5,10,2"
                         FontSize="15"
-                        Foreground="Black"
+                        Style="{DynamicResource TextBlockStyle}"
                         Text="Confirm Password" />
                     <PasswordBox
-                        x:Name="NewUserConfirmField"
+                        x:Name="ConfirmField"
                         Grid.Row="6"
                         Margin="10,0,10,0"
                         FontSize="19"
-                        ToolTip="Password" />
+                        PasswordChanged="PasswordBox_Confirm"
+                        Style="{DynamicResource PasswordBoxStyle}"
+                        ToolTip="Confirm" />
 
                     <Button
                         Grid.Row="7"
                         Margin="10,10,10,10"
                         Command="{Binding Registration}"
-                        Content="Register" />
+                        Content="Register"
+                        Style="{DynamicResource ButtonStyle}" />
                 </Grid>
             </Border>
         </StackPanel>

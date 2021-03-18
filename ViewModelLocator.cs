@@ -14,6 +14,9 @@ namespace library_accounting_system
         public RegistrationPageViewModel RegistrationPageViewModel => Ioc.Resolve<RegistrationPageViewModel>();
         public MainLibraryPageViewModel MainLibraryPageViewModel => Ioc.Resolve<MainLibraryPageViewModel>();
         public BookAuthorPageViewModel BookAuthorPageViewModel => Ioc.Resolve<BookAuthorPageViewModel>();
+
+        //////////////////////////INFO/////////////////////
         public BookInfoPageViewModel BookInfoPageViewModel => Ioc.Resolve<BookInfoPageViewModel>();
+        public AuthorInfoPageViewModel AuthorInfoPageViewModel => Ioc.Resolve<AuthorInfoPageViewModel>();
     }
 }

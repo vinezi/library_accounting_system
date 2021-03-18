@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:library_accounting_system.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="root"
     Title="BookAuthorPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -25,40 +26,38 @@
             Grid.Column="1"
             Margin="5"
             Padding="1"
-            BorderBrush="Black"
             BorderThickness="1"
-            CornerRadius="5">
+            CornerRadius="5"
+            Style="{DynamicResource BorderStyle}">
             <UniformGrid Columns="5">
                 <Button
+                    Margin="5"
                     Command="{Binding GoMainPage}"
                     Content="main"
-                    Style="{DynamicResource ButtonStyle}" />
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
                 <Border
                     Margin="5"
                     Padding="1"
-                    BorderBrush="Black"
                     BorderThickness="1"
-                    CornerRadius="5">
-                    <Button
-                        Margin="5"
-                        Content="autor"
-                        Style="{DynamicResource ButtonStyle}" />
+                    CornerRadius="5"
+                    Style="{DynamicResource BorderStyle}">
+                    <Button Content="autor" Style="{DynamicResource ButtonNoActiveTextStyle}" />
                 </Border>
                 <Button
                     Margin="5"
-                    Command="{Binding GoAutorPage}"
+                    Command="{Binding GoSearchPage}"
                     Content="search"
-                    Style="{DynamicResource ButtonStyle}" />
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
                 <Button
                     Margin="5"
-                    Command="{Binding GoAutorPage}"
+                    Command="{Binding GoMyBookPage}"
                     Content="my book"
-                    Style="{DynamicResource ButtonStyle}" />
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
                 <Button
                     Margin="5"
-                    Command="{Binding GoAutorPage}"
+                    Command="{Binding GoSettingPage}"
                     Content="setting"
-                    Style="{DynamicResource ButtonStyle}" />
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
             </UniformGrid>
         </Border>
 
@@ -79,11 +78,11 @@
                             <Border
                                 Margin="5"
                                 Padding="5"
-                                BorderBrush="Black"
                                 BorderThickness="1"
-                                CornerRadius="5">
+                                CornerRadius="5"
+                                Style="{DynamicResource BorderStyle}">
                                 <Border.InputBindings>
-                                    <MouseBinding Command="{Binding ElementName=root, Path=DataContext.OpenBookInfo}" Gesture="LeftClick" />
+                                    <MouseBinding Command="{Binding ElementName=root, Path=DataContext.OpenAutorInfo}" Gesture="LeftClick" />
                                 </Border.InputBindings>
 
                                 <Grid>
@@ -92,11 +91,17 @@
                                         <RowDefinition Height="30" />
                                         <RowDefinition Height="30" />
                                     </Grid.RowDefinitions>
-                                    <Image Source="test.jpg" />
+                                    <Image Source="aut.png" />
                                     <!--<<Image Source="test.jpg" Width="30" Height="30" Grid.Row="0"/>
                                     TextBlock Text="{Binding Title}" Grid.Row="0"/>-->
-                                    <TextBlock Grid.Row="1" Text="{Binding Autor}" />
-                                    <TextBlock Grid.Row="2" Text="{Binding cover}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Style="{DynamicResource TextBlockStyle}"
+                                        Text="{Binding Autor}" />
+                                    <TextBlock
+                                        Grid.Row="2"
+                                        Style="{DynamicResource TextBlockStyle}"
+                                        Text="{Binding cover}" />
                                 </Grid>
                             </Border>
                         </DataTemplate>

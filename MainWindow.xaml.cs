@@ -139,6 +139,8 @@ namespace library_accounting_system
         public MainWindow()
         {
             InitializeComponent();
+            //MinWidth = MinWidth;
+            //MinHeight = MinHeight;
             SourceInitialized += (s, e) =>
             {
                 IntPtr handle = (new WindowInteropHelper(this)).Handle;

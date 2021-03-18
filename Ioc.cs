@@ -22,7 +22,13 @@ namespace library_accounting_system
             services.AddSingleton<RegistrationPageViewModel>();
             services.AddSingleton<MainLibraryPageViewModel>();
             services.AddSingleton<BookAuthorPageViewModel>();
+
+
+
+
+            ////////INFO//////
             services.AddSingleton<BookInfoPageViewModel>();
+            services.AddSingleton<AuthorInfoPageViewModel>();
 
 
             services.AddSingleton<PageService>();

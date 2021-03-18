@@ -30,6 +30,15 @@ namespace library_accounting_system.ViewModels
             _navigation = navigation;
         }
 
+        public ICommand OpenAutorInfo => new DelegateCommand(() =>
+        {
+            _navigation.Navigate(new AuthorInfoPage());
+        });
+        
+
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////
+        /// </summary>
         public ICommand GoMainPage => new DelegateCommand(() =>
         {
             _navigation.Navigate(new MainLibraryPage());

@@ -14,6 +14,7 @@
     DataContext="{Binding Source={StaticResource VmLocator}, Path=MainViewModel}"
     WindowStyle="None"
     mc:Ignorable="d">
+    <!--  SizeToContent="WidthAndHeight"  -->
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="23" />
     </WindowChrome.WindowChrome>
@@ -39,8 +40,14 @@
                     Content="back"
                     Style="{DynamicResource ButtonStyleNoUser}" />
                 <Label />
-                <Button Command="{Binding GoRu}" Content="RU" Style="{DynamicResource ButtonStyleNoUser}" />
-                <Button Command="{Binding GoEn}" Content="EN" Style="{DynamicResource ButtonStyleNoUser}" />
+                <Button
+                    Command="{Binding GoRu}"
+                    Content="RU"
+                    Style="{DynamicResource ButtonStyleNoUser}" />
+                <Button
+                    Command="{Binding GoEn}"
+                    Content="EN"
+                    Style="{DynamicResource ButtonStyleNoUser}" />
             </UniformGrid>
 
             <!--<Button HorizontalAlignment="Left" Content="aaaaawwwwwwwwwwwwwa" Style="{StaticResource ControlButtons}" WindowChrome.IsHitTestVisibleInChrome="True"/>-->

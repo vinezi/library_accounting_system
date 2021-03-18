@@ -24,5 +24,15 @@ namespace library_accounting_system.Pages
         {
             InitializeComponent();
         }
+        private void PasswordBox_Password(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
+        private void PasswordBox_Confirm(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
     }
 }

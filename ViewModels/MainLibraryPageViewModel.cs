@@ -62,43 +62,43 @@ namespace library_accounting_system.ViewModels
                 Autor = "42AutorAutorAutorAutorAutor",
                 cover = "4covercovercovercovercover"
             });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
+            Books.Add(new BookModel
+            {
+                Title = "5TitleTitleTitleTitleTitle",
+                Autor = "42AutorAutorAutorAutorAutor",
+                cover = "4covercovercovercovercover"
+            });
             /*Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
-            {
-                Title = "5TitleTitleTitleTitleTitle",
-                Autor = "42AutorAutorAutorAutorAutor",
-                cover = "4covercovercovercovercover"
-            });
-            Books.Add(new BookModel
             {
                 Title = "5TitleTitleTitleTitleTitle",
                 Autor = "42AutorAutorAutorAutorAutor",
@@ -145,6 +145,21 @@ namespace library_accounting_system.ViewModels
         {
             _navigation.Navigate(new BookAuthorPage());
         });
+
+        public ICommand GoSearchPage => new DelegateCommand(() =>
+        {
+            _navigation.Navigate(new BookAuthorPage());
+        });
+
+        public ICommand GoMyBookPage => new DelegateCommand(() =>
+        {
+            _navigation.Navigate(new BookAuthorPage());
+        });
+        public ICommand GoSettingPage => new DelegateCommand(() =>
+        {
+            _navigation.Navigate(new BookAuthorPage());
+        });
+
 
     }
 }

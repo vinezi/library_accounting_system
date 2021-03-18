@@ -5,89 +5,110 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:library_accounting_system.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="root"
     Title="MainLibraryPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
     DataContext="{Binding Source={StaticResource VmLocator}, Path=MainLibraryPageViewModel}"
-    x:Name="root"
     mc:Ignorable="d">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="AUTO"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="AUTO" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Border CornerRadius="5" Padding="1" Margin="5" BorderThickness="1" BorderBrush="Black" Grid.Column="1"  >
+        <Border
+            Grid.Column="1"
+            Margin="5"
+            Padding="1"
+            BorderThickness="1"
+            CornerRadius="5"
+            Style="{DynamicResource BorderStyle}">
             <UniformGrid Columns="5">
 
-                <Border CornerRadius="5" Padding="1" Margin="5" BorderThickness="1" BorderBrush="Black">
-                    <Button Content="main" Style="{DynamicResource ButtonStyle}" />
+                <Border
+                    Margin="5"
+                    Padding="1"
+                    BorderThickness="1"
+                    CornerRadius="5"
+                    Style="{DynamicResource BorderStyle}">
+                    <Button Content="main" Style="{DynamicResource ButtonNoActiveTextStyle}" />
                 </Border>
-                <Button Content="autor" Margin="5" Command="{Binding GoAutorPage}" Style="{DynamicResource ButtonStyle}"/>
-                <Button Content="search" Margin="5" Command="{Binding GoSearchPage}" Style="{DynamicResource ButtonStyle}"/>
-                <Button Content="my book" Margin="5" Command="{Binding GoMyBookPage}" Style="{DynamicResource ButtonStyle}"/>
-                <Button Content="setting" Margin="5" Command="{Binding GoSettingPage}" Style="{DynamicResource ButtonStyle}"/>
+                <Button
+                    Margin="5"
+                    Command="{Binding GoAutorPage}"
+                    Content="autor"
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
+                <Button
+                    Margin="5"
+                    Command="{Binding GoSearchPage}"
+                    Content="search"
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
+                <Button
+                    Margin="5"
+                    Command="{Binding GoMyBookPage}"
+                    Content="my book"
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
+                <Button
+                    Margin="5"
+                    Command="{Binding GoSettingPage}"
+                    Content="setting"
+                    Style="{DynamicResource ButtonActiveTextStyle}" />
             </UniformGrid>
-
         </Border>
 
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
-                <ItemsControl ItemsSource="{Binding Books}" >
+        <Grid
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Books}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <UniformGrid Columns="5" HorizontalAlignment="Center"/>
+                            <UniformGrid HorizontalAlignment="Center" Columns="5" />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border CornerRadius="5" Padding="5" Margin="5" BorderThickness="1" BorderBrush="Black" >
+                            <Border
+                                Margin="5"
+                                Padding="5"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Style="{DynamicResource BorderStyle}">
                                 <Border.InputBindings>
-                                    <MouseBinding Command="{Binding ElementName=root, Path=DataContext.OpenBookInfo}" Gesture="LeftClick"/>
+                                    <MouseBinding Command="{Binding ElementName=root, Path=DataContext.OpenBookInfo}" Gesture="LeftClick" />
                                 </Border.InputBindings>
 
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="30"/>
-                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
                                     </Grid.RowDefinitions>
-                                    <Image Source="test.jpg"/>
+                                    <Image Source="test.jpg" />
                                     <!--<<Image Source="test.jpg" Width="30" Height="30" Grid.Row="0"/>
                                     TextBlock Text="{Binding Title}" Grid.Row="0"/>-->
-                                    <TextBlock Text="{Binding Autor}" Grid.Row="1"/>
-                                    <TextBlock Text="{Binding cover}" Grid.Row="2"/>
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Style="{DynamicResource TextBlockStyle}"
+                                        Text="{Binding Autor}" />
+                                    <TextBlock
+                                        Grid.Row="2"
+                                        Style="{DynamicResource TextBlockStyle}"
+                                        Text="{Binding cover}" />
                                 </Grid>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </ScrollViewer>
-
-
-
-            <!--<ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <UniformGrid Columns="4">
-                            <Border CornerRadius="5" Padding="5" Margin="5" BorderThickness="1" BorderBrush="Black">
-                                <UniformGrid Rows="3">
-                                    <TextBlock Text="{Binding Title}"/>
-                                    <TextBlock Text="{Binding Autor}"/>
-                                    <TextBlock Text="{Binding cover}"/>
-                                </UniformGrid>
-                            </Border>
-                        </UniformGrid>
-                        
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>-->
-
         </Grid>
-
     </Grid>
 </Page>
