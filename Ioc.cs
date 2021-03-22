@@ -19,11 +19,10 @@ namespace library_accounting_system
 
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<LoginPageViewModel>();
-            services.AddSingleton<RegistrationPageViewModel>();
+            services.AddTransient<RegistrationPageViewModel>();
             services.AddSingleton<MainLibraryPageViewModel>();
             services.AddSingleton<BookAuthorPageViewModel>();
-
-
+            services.AddSingleton<AdminPanelPageViewModel> ();
 
 
             ////////INFO//////

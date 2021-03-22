@@ -88,6 +88,9 @@
     </ApplicationDefinition>
     <Compile Include="Ioc.cs" />
     <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Pages\AdminPanelPage.xaml.cs">
+      <DependentUpon>AdminPanelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthorInfoPage.xaml.cs">
       <DependentUpon>AuthorInfoPage.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
     <Compile Include="Services\DataBaseHelper.cs" />
     <Compile Include="Services\PageService.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModels\AdminPanelPageViewModel.cs" />
     <Compile Include="ViewModels\AuthorInfoPageViewModel.cs" />
     <Compile Include="ViewModels\BookAuthorPageViewModel.cs" />
     <Compile Include="ViewModels\BookInfoPageViewModel.cs" />
@@ -131,6 +135,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AdminPanelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthorInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -6,7 +6,8 @@
     <Style x:Key="DataGridStyle" TargetType="DataGrid">
         <Setter Property="Foreground" Value="White" />
         <!--  цвет всех букв  -->
-        <Setter Property="Background" Value="#3f3f3f" />
+        <!--<Setter Property="Background" Value="#3f3f3f" />-->
+        <Setter Property="Background" Value="#5f3f3f" />
         <!--  цвет задней подложки (не ячейки)  -->
         <!--<Setter Property="AlternatingRowBackground" Value="Yellow" />  другой цвет через 1 (опцианално)-->
         <Setter Property="RowBackground" Value="#292a2d" />

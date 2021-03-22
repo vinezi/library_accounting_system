@@ -11,81 +11,132 @@
     MinWidth="800"
     MinHeight="450"
     AllowsTransparency="True"
+    Background="Transparent"
     DataContext="{Binding Source={StaticResource VmLocator}, Path=MainViewModel}"
     WindowStyle="None"
     mc:Ignorable="d">
-    <!--  SizeToContent="WidthAndHeight"  -->
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="23" />
     </WindowChrome.WindowChrome>
-    <Grid Style="{DynamicResource GridStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="23" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid
-            Grid.Row="0"
-            VerticalAlignment="Top"
-            Style="{DynamicResource GridStyle1}">
-            <!--  цвет не юзера  -->
 
-            <UniformGrid
+    <Grid Margin="5">
+        <Border
+            Background="#2D2D30"
+            BorderBrush="Chocolate"
+            BorderThickness=".8">
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="5"
+                    ShadowDepth="0"
+                    Color="Black" />
+            </Border.Effect>
+        </Border>
+
+        <Grid Style="{DynamicResource GridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="23" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid
                 Grid.Row="0"
-                HorizontalAlignment="Left"
-                Columns="4"
-                WindowChrome.IsHitTestVisibleInChrome="True">
-                <Button
-                    Padding="2"
-                    Command="{Binding GoToBack}"
-                    Content="back"
-                    Style="{DynamicResource ButtonStyleNoUser}" />
-                <Label />
-                <Button
-                    Command="{Binding GoRu}"
-                    Content="RU"
-                    Style="{DynamicResource ButtonStyleNoUser}" />
-                <Button
-                    Command="{Binding GoEn}"
-                    Content="EN"
-                    Style="{DynamicResource ButtonStyleNoUser}" />
-            </UniformGrid>
+                VerticalAlignment="Top"
+                Style="{DynamicResource GridStyle1}">
+                <!--  цвет не юзера  -->
 
-            <!--<Button HorizontalAlignment="Left" Content="aaaaawwwwwwwwwwwwwa" Style="{StaticResource ControlButtons}" WindowChrome.IsHitTestVisibleInChrome="True"/>-->
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontSize="16"
-                Foreground="Chocolate"
-                Text="{DynamicResource rTitle}" />
-            <StackPanel
-                Height="23"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Orientation="Horizontal"
-                WindowChrome.IsHitTestVisibleInChrome="True">
-                <Button
-                    Name="MinimizeButton"
-                    Width="32"
-                    BorderThickness="0"
-                    Content="—"
-                    Style="{StaticResource ControlButtons}" />
-                <Button
-                    Name="MaximizeButton"
-                    Width="32"
-                    BorderThickness="0"
-                    Content="⬜"
-                    Style="{StaticResource ControlButtons}" />
-                <Button
-                    Name="CloseButton"
-                    Width="32"
-                    BorderThickness="0"
-                    Content="🞪"
-                    FontSize="14"
-                    Style="{StaticResource ControlButtonsClose}" />
-            </StackPanel>
+                <UniformGrid
+                    Grid.Row="0"
+                    Margin="5,0,0,0"
+                    HorizontalAlignment="Left"
+                    Columns="4"
+                    WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button
+                        Padding="2"
+                        Command="{Binding GoToBack}"
+                        Content="back"
+                        Style="{DynamicResource ButtonStyleNoUser}" />
+                    <Label />
+                    <Button
+                        Command="{Binding GoRu}"
+                        Content="RU"
+                        Style="{DynamicResource ButtonStyleNoUser}" />
+                    <Button
+                        Command="{Binding GoEn}"
+                        Content="EN"
+                        Style="{DynamicResource ButtonStyleNoUser}" />
+                </UniformGrid>
+
+                <!--<Button HorizontalAlignment="Left" Content="aaaaawwwwwwwwwwwwwa" Style="{StaticResource ControlButtons}" WindowChrome.IsHitTestVisibleInChrome="True"/>-->
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="Chocolate"
+                    Text="{DynamicResource rTitle}" />
+                <StackPanel
+                    Height="23"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal"
+                    WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button
+                        Name="MinimizeButton"
+                        Width="32"
+                        BorderThickness="0"
+                        Content="—"
+                        Style="{StaticResource ControlButtons}" />
+                    <Button
+                        Name="MaximizeButton"
+                        Width="32"
+                        BorderThickness="0"
+                        Content="⬜"
+                        Style="{StaticResource ControlButtons}" />
+                    <Button
+                        Name="CloseButton"
+                        Width="32"
+                        BorderThickness="0"
+                        Content="🞪"
+                        FontSize="14"
+                        Style="{StaticResource ControlButtonsClose}" />
+                </StackPanel>
+            </Grid>
+            <Frame
+                Grid.Row="1"
+                Content="{Binding CurrentPage}"
+                NavigationUIVisibility="Hidden" />
         </Grid>
-        <Frame
-            Grid.Row="1"
-            Content="{Binding CurrentPage}"
-            NavigationUIVisibility="Hidden" />
     </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </Window>

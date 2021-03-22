@@ -25,17 +25,17 @@
 
         <Image Grid.Row="2" Source="aut.png" />
         <TextBlock
-            Style="{DynamicResource TextBlockStyle}"
             Grid.Row="1"
             Grid.Column="1"
             FontSize="24"
+            Style="{DynamicResource TextBlockStyle}"
             Text="Author Name" />
         <TextBlock
-            Style="{DynamicResource TextBlockStyle}"
             Grid.Row="2"
-            FontSize="20"
             Grid.RowSpan="2"
             Grid.Column="1"
+            FontSize="20"
+            Style="{DynamicResource TextBlockStyle}"
             Text="very big opisanie" />
 
     </Grid>

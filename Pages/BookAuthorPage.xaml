@@ -41,7 +41,7 @@
                     BorderThickness="1"
                     CornerRadius="5"
                     Style="{DynamicResource BorderStyle}">
-                    <Button Content="autor" Style="{DynamicResource ButtonNoActiveTextStyle}" />
+                    <Button Content="author" Style="{DynamicResource ButtonNoActiveTextStyle}" />
                 </Border>
                 <Button
                     Margin="5"

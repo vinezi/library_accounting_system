@@ -1,6 +1,9 @@
 ﻿using DevExpress.Mvvm;
+using library_accounting_system.Pages;
 using library_accounting_system.Services;
+using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows;
 using System.Windows.Input;
 
@@ -9,8 +12,8 @@ namespace library_accounting_system.ViewModels
     class RegistrationPageViewModel : BindableBase
     {
         public string userLoginField { get; set; }
-        public string Password { private get; set; } //не безопасно
-        public string Confirm { private get; set; } //не безопасно
+        public string Password { private get; set; }
+        public string Confirm { private get; set; } 
 
         private readonly PageService _navigation;
 
@@ -23,49 +26,62 @@ namespace library_accounting_system.ViewModels
         {
             DataBaseHelper db = new DataBaseHelper();
 
+            //получаем поля
             String loginUser = userLoginField;
             String passwordUser = Password;
-            String confirmdUser = Confirm;
-            /*
-             String loginUser = NewUserLoginField.Text;
-            String passwordUser = NewUserPasswordField.Password;
-            String confirmUser = NewUserConfirmField.Password;
+            String confirmUser = Confirm;
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `is_admin`) VALUES (@newUserLogin, @newUserPassword, '')", db.getConnection());
-
-            if (passwordUser == confirmUser)
+            //провереям на пустоту
+            if (loginUser == null|| passwordUser == null || confirmUser == null)
             {
-                command.Parameters.Add("@newUserLogin", MySqlDbType.VarChar).Value = loginUser;
-                command.Parameters.Add("@newUserPassword", MySqlDbType.VarChar).Value = passwordUser;
+                MessageBox.Show("error empty field");
+                return;
             }
-            else
-            {
-                MessageBox.Show("error");
+                
 
+            //проверяем существование
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+            adapter.SelectCommand = command;
+            try
+            {
+                adapter.Fill(table);
             }
+            catch (Exception)
+            {
+                MessageBox.Show("error connect");
+                return;
+            }
+            if (table.Rows.Count > 0 )
+            {
+                MessageBox.Show("уже есть");
+                return;
+            }
+
+            //проверяем пароль
+            if (passwordUser != confirmUser)
+            {
+                MessageBox.Show("пароль не совпадает");
+                return;
+            }
+
+            MySqlCommand command2 = new MySqlCommand("INSERT INTO `users` (`login`, `password`, `is_admin`) VALUES (@newUserLogin, @newUserPassword, '')", db.getConnection());
+            command2.Parameters.Add("@newUserLogin", MySqlDbType.VarChar).Value = loginUser;
+            command2.Parameters.Add("@newUserPassword", MySqlDbType.VarChar).Value = passwordUser;
+
 
             db.openConnection();
 
-            if (command.ExecuteNonQuery() == 1)
+            if (command2.ExecuteNonQuery() == 1)
                 MessageBox.Show("reg? OK");
             else
                 MessageBox.Show("reg? not OK");
 
 
             db.closeConnection();
-             */
-
-
-
-            MessageBox.Show("rega BD");
-            //check c bazi
-            //_navigation.Navigate(new RegistrationPage());
+            _navigation.Navigate(new MainLibraryPage());
         });
-
-        /*public ICommand GoBack => new DelegateCommand(() =>
-        {
-            _navigation.Navigate(new LoginPage());
-            //_navigation.Navigate(...);
-        });*/
     }
 }

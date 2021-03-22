@@ -32,7 +32,7 @@ namespace library_accounting_system.Pages
         private void PasswordBox_Confirm(object sender, RoutedEventArgs e)
         {
             if (this.DataContext != null)
-            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+            { ((dynamic)this.DataContext).Confirm = ((PasswordBox)sender).Password; }
         }
     }
 }

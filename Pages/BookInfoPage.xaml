@@ -24,25 +24,28 @@
             <RowDefinition Height="197*" />
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="2" Source="test.jpg" Grid.RowSpan="2"/>
+        <Image
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Source="test.jpg" />
         <TextBlock
-            Style="{DynamicResource TextBlockStyle}"
             Grid.Row="1"
             Grid.Column="1"
             FontSize="24"
+            Style="{DynamicResource TextBlockStyle}"
             Text="Book Name" />
         <TextBlock
-            Style="{DynamicResource TextBlockStyle}"
             Grid.Row="2"
-            FontSize="20"
             Grid.Column="1"
+            FontSize="20"
+            Style="{DynamicResource TextBlockStyle}"
             Text="Author Name" />
         <TextBlock
-            Style="{DynamicResource TextBlockStyle}"
             Grid.Row="3"
-            FontSize="20"
-            Grid.Column="1"
             Grid.RowSpan="2"
+            Grid.Column="1"
+            FontSize="20"
+            Style="{DynamicResource TextBlockStyle}"
             Text="very big opisanie" />
     </Grid>
 </Page>

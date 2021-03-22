@@ -43,5 +43,20 @@ namespace library_accounting_system.ViewModels
         {
             _navigation.Navigate(new MainLibraryPage());
         });
+
+        public ICommand GoSearchPage => new DelegateCommand(() =>
+        {
+            //_navigation.Navigate(new BookAuthorPage());
+        });
+
+        public ICommand GoMyBookPage => new DelegateCommand(() =>
+        {
+            _navigation.Navigate(new AdminPanelPage());
+        });
+
+        public ICommand GoSettingPage => new DelegateCommand(() =>
+        {
+            //_navigation.Navigate(new BookAuthorPage());
+        });
     }
 }

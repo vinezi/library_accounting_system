@@ -42,7 +42,7 @@
                 <Button
                     Margin="5"
                     Command="{Binding GoAutorPage}"
-                    Content="autor"
+                    Content="author"
                     Style="{DynamicResource ButtonActiveTextStyle}" />
                 <Button
                     Margin="5"
